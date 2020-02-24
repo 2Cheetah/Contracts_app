@@ -2,14 +2,16 @@
 {% block content %}
   {% for contract in contracts %}
     <article class="media content-section">
-      <img class="rounded-circle article-img" src="{{ post.author.profile.image.url }}">
+      <img class="rounded-circle article-img" src="{{ contract.author.profile.image.url }}">
       <div class="media-body">
         <div class="article-metadata">
-          <a class="mr-2" href="#">{{ post.author }}</a>
-          <small class="text-muted">{{ post.date_posted|date:'G:i e, d M Y' }}</small>
+          <a class="mr-2" href="#">{{ contract.author }}</a>
+          <small class="text-muted">{{ contract.date_created|date:'G:i e, d M Y' }}</small>
         </div>
-        <h2><a class="article-title" href="#">{{ post.title }}</a></h2>
-        <p class="article-content">{{ post.content }}</p>
+        <h2><a class="article-title" href="#">{{ contract.title }}</a></h2>
+        <p class="article-content">Contract type: {{ contract.get_contract_type_display }}
+        Contract amount: {{ contract.contract_amount }} {{ contract.get_contract_currency_display }}
+        <a href="#">{{ contract.contract_file }}</a></p>
       </div>
     </article>
   {% endfor %}

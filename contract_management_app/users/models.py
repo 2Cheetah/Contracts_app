@@ -13,7 +13,8 @@ class Profile(models.Model):
         ('QUA', 'Quality Accoutable'),
         ('GEN', 'General Manager'),
         ('PUR', 'Purchasing Accountable'),
-        ('ACC', 'Accounting')
+        ('ACC', 'Accounting'),
+        ('LAW', 'Lawyer')
     ]
 
     user = models.OneToOneField(User, on_delete=models.CASCADE)
